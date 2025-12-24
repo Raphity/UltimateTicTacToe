@@ -1,16 +1,23 @@
-from custom_exceptions import SquareNotEmptyError, SquareNotFoundError
+"""TicTacToe class file"""
 from os import system
+from custom_exceptions import SquareNotEmptyError, SquareNotFoundError
 from bot import bot
 
 
 class TicTacToe:
+    """TicTacToe class"""
+
     def __init__(self, board, turn, mode, difficulty) -> None:
+        """Init function"""
+
         self.board = board
         self.turn = turn
         self.mode = mode
         self.difficulty = difficulty
 
     def place_symbole(self):
+        """Method to place symbol to the board var"""
+
         raw = 1.1
         col = 1.1
         symbol = " "
