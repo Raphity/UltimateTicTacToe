@@ -41,10 +41,10 @@ class TicTacToe:
             while not isinstance(raw, int) or \
                     not isinstance(col, int):
                 try:
-                    raw = int(input("Select raw (0-2): "))
-                    col = int(input("Select column (0-2): "))
+                    raw = int(input("Select raw (1-3): "))-1
+                    col = int(input("Select column (1-3): "))-1
                 except ValueError:
-                    print("Please enter num bewtween 0 and 2")
+                    print("Please enter num bewtween 1 and 3")
                     continue
 
         # Solo and player turn
@@ -53,13 +53,13 @@ class TicTacToe:
             while not isinstance(raw, int) or \
                     not isinstance(col, int):
                 try:
-                    raw = int(input("Select raw (0-2): "))
-                    col = int(input("Select column (0-2): "))
+                    raw = int(input("Select raw (1-3): "))-1
+                    col = int(input("Select column (1-3): "))-1
                 except ValueError:
-                    print("Please enter num bewtween 0 and 2")
+                    print("Please enter num bewtween 1 and 3")
                     continue
 
-        square = f"Raw: {raw}, Col: {col}"
+        square = f"Raw: {raw+1}, Col: {col+1}"
 
         if not 0 <= raw <= 2:
             current_error = SquareNotFoundError(square=square)
