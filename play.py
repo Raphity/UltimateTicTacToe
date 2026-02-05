@@ -1,11 +1,8 @@
-"""Main file statrs the entire program"""
 from custom_exceptions import SquareNotEmptyError, SquareNotFoundError
 from tictactoe import TicTacToe
 
 
 def main():
-    """Menu function"""
-
     go_on = True
     while go_on:
         modes = "Solo\nMultiplayer"

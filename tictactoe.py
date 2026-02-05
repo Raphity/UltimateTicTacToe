@@ -1,23 +1,16 @@
-"""TicTacToe class file"""
-from os import system
 from custom_exceptions import SquareNotEmptyError, SquareNotFoundError
+from os import system
 from bot import bot
 
 
 class TicTacToe:
-    """TicTacToe class"""
-
     def __init__(self, board, turn, mode, difficulty) -> None:
-        """Init function"""
-
         self.board = board
         self.turn = turn
         self.mode = mode
         self.difficulty = difficulty
 
     def place_symbole(self):
-        """Method to place symbol to the board var"""
-
         raw = 1.1
         col = 1.1
         symbol = " "
@@ -41,10 +34,10 @@ class TicTacToe:
             while not isinstance(raw, int) or \
                     not isinstance(col, int):
                 try:
-                    raw = int(input("Select raw (1-3): "))-1
-                    col = int(input("Select column (1-3): "))-1
+                    raw = int(input("Select raw (0-2): "))
+                    col = int(input("Select column (0-2): "))
                 except ValueError:
-                    print("Please enter num bewtween 1 and 3")
+                    print("Please enter num bewtween 0 and 2")
                     continue
 
         # Solo and player turn
@@ -53,13 +46,13 @@ class TicTacToe:
             while not isinstance(raw, int) or \
                     not isinstance(col, int):
                 try:
-                    raw = int(input("Select raw (1-3): "))-1
-                    col = int(input("Select column (1-3): "))-1
+                    raw = int(input("Select raw (0-2): "))
+                    col = int(input("Select column (0-2): "))
                 except ValueError:
-                    print("Please enter num bewtween 1 and 3")
+                    print("Please enter num bewtween 0 and 2")
                     continue
 
-        square = f"Raw: {raw+1}, Col: {col+1}"
+        square = f"Raw: {raw}, Col: {col}"
 
         if not 0 <= raw <= 2:
             current_error = SquareNotFoundError(square=square)

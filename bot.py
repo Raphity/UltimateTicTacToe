@@ -1,12 +1,7 @@
-"""Bot file"""
 from random import choice
 
 
 def place_random(board):
-    """Returns a tupple of
-    square position selected
-    at random"""
-
     raw = 1
     col = 1
     while " " != board[raw][col]:
@@ -45,38 +40,38 @@ def cancel_line(board):
 
     # check for raws
     for raw in range(3):
-        count_o_raw = 0
-        count_x_raw = 0
+        count_O_raw = 0
+        count_X_raw = 0
         for col in range(3):
             if "O" == board[raw][col]:
-                count_o_raw += 1
+                count_O_raw += 1
             if "X" == board[raw][col]:
-                count_x_raw += 1
-        if 2 == count_o_raw:
+                count_X_raw += 1
+        if 2 == count_O_raw:
             for col in range(3):
                 if " " == board[raw][col]:
                     selected_raw = raw
                     selected_col = col
-        if 2 == count_x_raw:
+        if 2 == count_X_raw:
             for col in range(3):
                 if " " == board[raw][col]:
                     return (raw, col)
 
     # check for column
     for col in range(3):
-        count_o_col = 0
-        count_x_col = 0
+        count_O_col = 0
+        count_X_col = 0
         for raw in range(3):
             if "O" == board[raw][col]:
-                count_o_col += 1
+                count_O_col += 1
             if "X" == board[raw][col]:
-                count_x_col += 1
-        if 2 == count_o_col:
+                count_X_col += 1
+        if 2 == count_O_col:
             for raw in range(3):
                 if " " == board[raw][col]:
                     selected_raw = raw
                     selected_col = col
-        if 2 == count_x_col:
+        if 2 == count_X_col:
             for raw in range(3):
                 if " " == board[raw][col]:
                     return (raw, col)
@@ -88,8 +83,6 @@ def cancel_line(board):
 
 
 def bot(board, turn, difficulty):
-    """Main bot funtion"""
-
     valid = " "
     raw = 1
     col = 1
