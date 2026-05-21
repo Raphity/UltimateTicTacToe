@@ -14,7 +14,7 @@ def main():
 
         difficulty = None
 
-        if "solo" == mode:
+        if "solo" == mode.lower():
             valid_diff = ["easy", "hard"]
             difficulty = str(input("Difficulty\neasy\nhard\nChoice: "))
 
