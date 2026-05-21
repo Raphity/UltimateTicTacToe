@@ -1,4 +1,5 @@
 from custom_exceptions import SquareNotEmptyError, SquareNotFoundError
+from platform import system
 from os import system
 from bot import bot
 
@@ -112,7 +113,11 @@ class TicTacToe:
         """Replace clear by cls if
         you use windows cmd"""
 
-        system("clear")
+        if "Windows" == system:
+            system("cls")
+        else:
+            system("clear")
+
         print("--------")
         for raw in self.board:
             line = " |".join(raw)
