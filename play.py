@@ -12,7 +12,7 @@ def main():
         while mode.lower() not in valid_modes:
             mode = str(input(f"Select mode:\n{modes}\nchoice: "))
 
-        difficulty = None
+        difficulty = "None"
 
         if "solo" == mode.lower():
             valid_diff = ["easy", "hard"]
@@ -23,7 +23,7 @@ def main():
 
         board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 
-        tictactoe = TicTacToe(board, turn=1, mode=mode, difficulty=difficulty)
+        tictactoe = TicTacToe(board, turn=1, mode=mode.lower(), difficulty=difficulty.lower())
         tictactoe.display_board()
 
         while not tictactoe.game_finished():
